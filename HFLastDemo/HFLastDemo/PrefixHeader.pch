@@ -1,0 +1,39 @@
+//
+//  PrefixHeader.pch
+//  HFLastDemo
+//
+//  Created by wangtc on 2019/3/25.
+//  Copyright © 2019 wtc. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define KScreenWidth ([[UIScreen mainScreen] bounds].size.width)
+#define KScreenHeight [[UIScreen mainScreen] bounds].size.height
+
+//是不是苹果十
+#define EMALL_IS_IPHONE_X                     (((KScreenHeight/KScreenWidth)*100) >= 216)
+//NavBar高度
+#define EMALL_NAVIGATION_BAR_HEIGHT           (EMALL_IS_IPHONE_X ? 88.f : 64.f)
+//tabBar高度
+#define EMALL_TAB_BAR_HEIGHT                  (EMALL_IS_IPHONE_X ? (49.f+34.f) : 49.f)
+//状态栏高度
+#define EMALL_STATUS_BAR_HEIGHT               (EMALL_IS_IPHONE_X ? 44.f : 20.f)// 状态栏高度
+//iphone10 多余的底部
+#define EMALL_TABBAR_TEN_MORE                 (EMALL_IS_IPHONE_X ? 34.f : 0.f)
+
+//navi在的时候 底下视图的高度
+#define EMALL_NAV_VIEW_HEIGHT                 (KScreenHeight)-(EMALL_NAVIGATION_BAR_HEIGHT)
+//tabbar在的时候
+#define EMALL_TAB_VIEW_HEIGHT                 ((KScreenHeight)-(EMALL_TAB_BAR_HEIGHT))
+//navi和tabbar都存在  底下视图的高度
+#define EMALL_TAB_NAV_VIEW_HEIGHT             ((KScreenHeight)-(EMALL_NAVIGATION_BAR_HEIGHT)-(EMALL_TAB_BAR_HEIGHT))
+
+#define   EMALL_SCREEN_MAX_LENGTH   (MAX(KScreenWidth, KScreenHeight))
+#define   EMALL_SCREEN_MIN_LENGTH   (MIN(KScreenWidth, KScreenHeight))
+
+//16进制颜色
+#define EMALL_ColorHEXS(string)               [UIColor colorWithHexString:string]
+
+#endif /* PrefixHeader_pch */
